@@ -1,6 +1,6 @@
 # Project_python
 
-## Projetos em Python: Do Básico à Inteligência Artificial
+## Mini projetos em Python: Do Básico à Inteligência Artificial
 
 Este repositório contém projetos em Python que cobrem uma ampla gama de níveis de dificuldade, começando desde o básico até chegando à implementação de Inteligência Artificial. Todos os projetos estão organizados em pastas individuais, com um README explicando sobre o projeto e os requisitos de instalação.
 
