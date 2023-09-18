@@ -19,7 +19,7 @@ Aqui está uma lista de alguns dos projetos disponíveis neste repositório:
 
 ## Contribuições
 
-Este repositório é aberto a contribuições externas. Se você quiser adicionar um novo projeto a este repositório, sinta-se à vontade para criar um PR com seu projeto ou entrar em contato com os proprietários do repositório para obter mais informações.
+Este repositório é aberto a contribuições externas. Se você quiser adicionar um novo projeto a este repositório, sinta-se à vontade para criar um PR com seu projeto.
 
 ## Licença
 
