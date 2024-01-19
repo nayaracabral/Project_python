@@ -1,1 +1,61 @@
-.
+import React, { useState, useEffect } from 'react';
+import './j.css'; 
+
+const Game = () => {
+  const [ballPosition, setBallPosition] = useState({ x: 0, y: 0 });
+  const [ballColor, setBallColor] = useState('red');
+  const [stars, setStars] = useState([]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBallPosition((prevPosition) => ({
+        x: prevPosition.x + 5,
+        y: prevPosition.y + 5,
+      }));
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (ballPosition.x >= window.innerWidth - 100 || ballPosition.x <= 0 || ballPosition.y >= window.innerHeight - 100 || ballPosition.y <= 0) {
+      setBallColor(getRandomColor());
+      generateStar();
+    }
+  }, [ballPosition]);
+
+  const getRandomColor = () => {
+    const colors = ['red', 'blue', 'green', 'yellow'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  };
+
+  const generateStar = () => {
+    const newStars = [...stars];
+    newStars.push({
+      x: ballPosition.x,
+      y: ballPosition.y,
+      id: Date.now(),
+    });
+    setStars(newStars);
+  };
+
+  return (
+    <div className="game-container">
+      {stars.map(star => {
+        return (
+          <div
+            className="star"
+            key={star.id}
+            style={{ top: star.y, left: star.x }}
+          ></div>
+        );
+      })}
+      <div
+        className="ball"
+        style={{ backgroundColor: ballColor, top: ballPosition.y, left: ballPosition.x }}
+      ></div>
+    </div>
+  );
+};
+
+export default Game;
